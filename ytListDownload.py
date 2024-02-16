@@ -15,7 +15,7 @@ def downloadVideos():
 		line = file.readline().strip()
 		otherUrls= file.readlines()
 	while line:
-		parts = line.split('|')
+		parts = line.split(' ')
 		url = parts[0].strip()
 		format = parts[1].strip()
 		if format == "V" :
@@ -31,8 +31,8 @@ def downloadVideos():
 if __name__ == "__main__":
 	path="/home/user/PATH/links.txt" #ruta absoluta del archivo con los links
 	# EJEMPLO DEL CONTENIDO DEL ARCHIVO links.txt (no incluye los paréntesis)
-	# https://www.youtube.com/watch?v=example  | P (se descargará en m4a en la subcarpeta "Podcasts")
-	# https://www.youtube.com/watch?v=example2 | V (se descargará en mp4 en la subcarpeta "Vídeos")
+	# https://www.youtube.com/watch?v=example P (se descargará en m4a en la subcarpeta "Podcasts")
+	# https://www.youtube.com/watch?v=example2 V (se descargará en mp4 en la subcarpeta "Vídeos")
 	folder="/home/usr/PATH/YTDownloads" #ruta absoluta de la carpeta de descargas
 
 	print(f"\n{Fore.YELLOW}[+] Iniciando descargas ... {Style.RESET_ALL}\n")
